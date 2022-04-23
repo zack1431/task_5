@@ -107,7 +107,7 @@
 
 
  //rotate an array k times
- const rotateArray1 = function(nums, k) {
+ function rotateArray1(nums, k) {
 
     for (let i = 0; i < k; i++) {
         nums.unshift(nums.pop());
@@ -117,3 +117,71 @@
   }
 
   console.log(rotateArray1([2,3,4,5,6,7],3))
+
+  //Do the below programs in arrow functions
+  const printOddarr = ()=>{
+    let arr = [1,2,3,4,5,6,7,8,9];
+    let result = [];
+    arr.forEach(val =>{
+        if(val % 2 != 0){
+            result.push(val);
+        }
+    })
+    return result;
+}
+console.log(printOddarr())
+
+const converStringTitleCapsarr = ()=>{
+    let arr = ['jakir','alina','vahab','zarina','karina'];
+    let res = []
+    arr.forEach(val =>{
+        if(typeof(val) == 'string')
+        {
+            res.push(val.charAt(0).toUpperCase() + val.substring(1))
+        }
+    })
+    return res
+}
+console.log(converStringTitleCapsarr())
+
+const sumArrs = () =>{
+    let arr = [1,2,3,4,56,7,7,8];
+    let sum = 0;
+    arr.forEach(val =>{
+      sum += val;
+    })
+    return sum
+}
+console.log(sumArrs())
+
+const primeArrs = () =>{
+    let arr = [1,2,4,5,6,7,19,23,45];
+    let i = 2;
+    let res = [];
+    arr.forEach(val =>{
+        if(val == 1){
+            console.log('1 is neither prime nor composite number')
+        }
+        else if(val > 1){
+            if(val % i != 0){
+              res.push(val);
+              
+            }
+            else{
+                console.log(val+' is not a prime number')
+            }
+            i++;
+        }
+    })
+    return res
+}
+console.log(primeArrs())
+ const isPalindromearr = ()=> {
+    let arr = ['noon','lol','bear','bob','javascript'];
+    let res = [];
+    arr.forEach(val =>{
+        val == val.split("").reverse().join("") ? res.push(val) : ''
+    })  
+    return res
+ }
+ console.log(isPalindromearr())
